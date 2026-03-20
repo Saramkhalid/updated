@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid Mubarak Ammara 🌙</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: blink 2s infinite;
+}
+@keyframes blink {
+    0%,100% {opacity: 0.2;}
+    50% {opacity: 1;}
+}
+
+/* Card */
+.card {
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.typing {
+    font-size: 22px;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 5s steps(40, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* Moon */
+.moon {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    width: 80px;
+    height: 80px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: -15px 0 0 0 #0f2027;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #ffd369;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #ffb703;
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<div class="card">
+    <h1>Eid Mubarak 🌙✨</h1>
+    <div class="typing">
+        Dear Ammara, wishing you endless happiness, peace, and smiles this Eid 💖
+    </div>
+    <p style="margin-top:20px;">— From Saram</p>
+
+    <button onclick="playMusic()">Click for Surprise 🎵</button>
+</div>
+
+<audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+<script>
+// Stars generator
+for(let i=0;i<80;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.animationDuration=(Math.random()*3+1)+"s";
+    document.body.appendChild(star);
+}
+
+// Music
+function playMusic(){
+    document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
